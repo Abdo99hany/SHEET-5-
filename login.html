@@ -16,23 +16,27 @@
         </ul>
     </nav>
 <h1>Welcome to My Website</h1>
-   <form method="GET" action="">
+ <form id="loginForm">
         <label>Username:</label>
-        <input type="text" name="username"><br><br>
+        <input type="text" name="username" id="username"><br><br>
 
         <label>Password:</label>
-        <input type="text" name="password"><br><br>
+        <input type="text" name="password" id="password"><br><br>
 
         <input type="submit" value="Login">
     </form>
 
-    <?php
-    if (isset($_GET['username']) && isset($_GET['password'])) {
-        $username = $_GET['username'];
-        $password = $_GET['password'];
-        echo "<script>alert('Username: $username | Password: $password');</script>";
-    }
-    ?>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // يمنع الفورم من الإرسال الفعلي
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            alert("Username: " + username + " | Password: " + password);
+        });
+    </script>
+
   </body>
   
 
