@@ -21,11 +21,16 @@
         <input type="text" name="username">
         <input type="submit" value="Login">
     </form>
+        <label>password:</label>
+        <input type="text" name="password">
+        <input type="submit" value="Login">
+    </form>
 
     <?php
     if (isset($_GET['username'])) {
         $username = $_GET['username'];
-        echo "<h2>Congrats! You're logged in as: $username</h2>";
+        $password = $_GET['password'];
+        echo "<h2>Congrats! You're logged in as: $username and passeord as $password</h2>";
     }
     ?>
   </body>
