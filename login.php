@@ -16,21 +16,21 @@
         </ul>
     </nav>
 <h1>Welcome to My Website</h1>
- <form method="GET" action="">
+   <form method="GET" action="">
         <label>Username:</label>
-        <input type="text" name="username">
-        <input type="submit" value="Login">
-    </form>
-        <label>password:</label>
-        <input type="text" name="password">
+        <input type="text" name="username"><br><br>
+
+        <label>Password:</label>
+        <input type="text" name="password"><br><br>
+
         <input type="submit" value="Login">
     </form>
 
     <?php
-    if (isset($_GET['username'])) {
+    if (isset($_GET['username']) && isset($_GET['password'])) {
         $username = $_GET['username'];
         $password = $_GET['password'];
-        echo "<h2>Congrats! You're logged in as: $username and passeord as $password</h2>";
+        echo "<script>alert('Username: $username | Password: $password');</script>";
     }
     ?>
   </body>
